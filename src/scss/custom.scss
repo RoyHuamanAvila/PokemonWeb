@@ -1,0 +1,159 @@
+* {
+    -webkit-user-select: none;
+    user-select: none;
+
+    p {
+        margin: 0 !important;
+    }
+}
+
+$primary: #ff5350;
+$secondary: #636363;
+$light: #929ba2;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+    "grass" : #a8f085,
+    "poison": #ae4dff,
+    "fire": #ee6f3f,
+    "flying": #f6f8fc,
+    "water": #0d6efd,
+    "bug": #ccbc50,
+    "normal": #b7b8c8,
+    "electric": #ffec65,
+    "ground": #6d3823,
+    "fairy": #ffc6b5,
+    "fighting": #df7247,
+    "psychic": #dc4dff,
+    "rock": #322e13,
+    "steel": #c2c1d7,
+    "ice": #82abff,
+    "ghost": #230f34,
+    "dragon": #00ffc7
+);
+
+
+
+
+
+.App {
+    background-color: #f6f8fc;
+    box-sizing: border-box;
+}
+
+nav {
+    height: 60px;
+}
+
+.item-nav {
+    color: $secondary;
+    fill: $secondary;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+}
+
+.item-nav.active {
+    color: $primary;
+    fill: $primary;
+}
+
+.item-nav.active::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: $primary;
+}
+
+.item-nav:hover {
+    color: $primary;
+    fill: $primary;
+}
+
+input[type="text"]::placeholder {
+    color: $light;
+}
+
+input[type="text"]:focus {
+    border-color: transparent;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.fill-white {
+    fill: white;
+}
+
+.btn-search {
+    width: 30px;
+    height: 30px;
+}
+
+.poke-card {
+    width: 250px;
+    padding: 10px 0px;
+    margin-top: 80px;
+    background-color: white;
+
+    img {
+        position: absolute;
+        bottom: 150px
+    }
+}
+
+.poke-card:hover {
+    background-color: rgb(239, 239, 239);
+}
+
+.poke-card.active {
+    background-color: rgb(212, 237, 255);
+}
+
+.cardinfopokemon {
+    margin-top: 120px;
+    position: relative;
+    padding: 50px 10px;
+
+    img {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        top: -150px
+    }
+}
+
+.teamMember-button {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.poke-card:has(> [type=radio]:checked) {
+    background-color: #c8fff3;
+}
+
+.poke-card-border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border: 1px solid red;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

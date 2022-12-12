@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.258183mm"
+   height="12.943672mm"
+   viewBox="0 0 12.258184 12.943671"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="Pokeballicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0.1"
+     fit-margin-left="0.1"
+     fit-margin-right="0.1"
+     fit-margin-bottom="0.1"
+     inkscape:zoom="7.8816614"
+     inkscape:cx="17.382122"
+     inkscape:cy="19.983097"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-159.30478,-117.94309)">
+    <g
+       id="g5373"
+       transform="translate(-0.70495924,0.87280668)">
+      <path
+         id="path3866"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:1.2331;stroke-linecap:round"
+         d="m 12.865234,26.734375 a 22.787724,22.787724 0 0 0 11.392578,19.736328 22.787724,22.787724 0 0 0 22.789063,0 22.787724,22.787724 0 0 0 11.392578,-19.736328 H 48.576172 A 12.941434,11.545789 0 0 1 35.652344,37.935547 12.941434,11.545789 0 0 1 22.728516,26.734375 Z"
+         transform="matrix(0.26458333,0,0,0.26458333,156.70581,116.81071)" />
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.33525;stroke-linecap:round"
+         id="path4115"
+         cx="166.13884"
+         cy="123.49104"
+         r="1.8127524" />
+      <path
+         id="path5368"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.326258;stroke-linecap:round"
+         d="m 160.10974,123.20005 a 6.0292519,6.0292519 0 0 1 3.01428,-5.2219 6.0292519,6.0292519 0 0 1 6.02961,0 6.0292519,6.0292519 0 0 1 3.01429,5.2219 h -2.60966 a 3.4240877,3.0548233 0 0 0 -3.41943,-2.96364 3.4240877,3.0548233 0 0 0 -3.41943,2.96364 z" />
+    </g>
+  </g>
+</svg>
