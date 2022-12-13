@@ -34,14 +34,18 @@ $theme-colors: (
     "dragon": #00ffc7
 );
 
-
-
-
-
 .App {
-    background-color: #f6f8fc;
+    background-color: #e4edff;
     box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+
+    .z-index-2 {
+        position: relative;
+        z-index: 2;
+    }
 }
+
 
 nav {
     height: 60px;
@@ -115,9 +119,10 @@ input[type="text"]:focus {
 }
 
 .cardinfopokemon {
-    margin-top: 120px;
+    margin-top: 100px;
     position: relative;
     padding: 50px 10px;
+    padding-bottom: 10px;
 
     img {
         width: 200px;
@@ -126,6 +131,31 @@ input[type="text"]:focus {
         top: -150px
     }
 }
+
+.cardinfopokemon-data {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100vh - 300px);
+}
+
+.cardinfopokemon-data::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.cardinfopokemon-data::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.cardinfopokemon-data::-webkit-scrollbar-thumb:vertical {
+    border-radius: 4px;
+    background-color: $primary;
+}
+
+.cardinfopokemon-data::-webkit-scrollbar-track:vertical {
+    background: white;
+    border-radius: 4px;
+}
+
 
 .teamMember-button {
     width: 100px;
@@ -155,5 +185,40 @@ input[type="text"]:focus {
     bottom: 0;
     border: 1px solid red;
 }
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+.pokedex-list {
+    max-height: calc(100vh - 170px);
+    overflow: scroll;
+    align-items: baseline;
+}
+
+.pokedex-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.pokedex-list::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.pokedex-list::-webkit-scrollbar-thumb:vertical {
+    border-radius: 4px;
+    background-color: $primary;
+}
+
+.pokedex-list::-webkit-scrollbar-track:vertical {
+    background: white;
+    border-radius: 4px;
+}
+
+.box-slot {
+    height: 100px;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.315);
+}
+
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
