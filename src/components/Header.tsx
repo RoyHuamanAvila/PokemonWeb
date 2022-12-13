@@ -8,7 +8,7 @@ const Header = () => {
             <ItemNav to="/" name="Home">
                 <Pikachu_Icon />
             </ItemNav>
-            <ItemNav to="/teams" name="Teams">
+            <ItemNav to="/box" name="Box">
                 <Pokeball_Icon />
             </ItemNav>
         </nav>
