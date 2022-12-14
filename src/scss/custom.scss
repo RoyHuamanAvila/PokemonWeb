@@ -215,10 +215,14 @@ input[type="text"]:focus {
 }
 
 .box-slot {
+    cursor: move;
     height: 100px;
     width: 100px;
     background: rgba(255, 255, 255, 0.315);
 }
 
+.isDragging {
+    opacity: 0.5;
+}
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

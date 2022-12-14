@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import Box from './pages/Box'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 
 const router = createBrowserRouter([
@@ -21,8 +23,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <DndProvider backend={HTML5Backend}>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </DndProvider>
   </React.StrictMode>,
 )
