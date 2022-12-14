@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface PokedexData {
     count:    number;
     next:     string;
@@ -13,6 +15,11 @@ export interface Result {
 
 export interface Pokemon {
     idCaptured?:               string;
+    inBox?: boolean;
+    box?: {
+        box: string;
+        slot: number;
+    }
     abilities:                Ability[];
     base_experience:          number;
     forms:                    Species[];
@@ -189,8 +196,15 @@ export interface Type {
 }
 
 export interface Box {
-    pokemons: Pokemon[]
+    slots: Slot[]
 }
+
+export interface Slot {
+    pokemon: Pokemon | null,
+    index: number,
+    children?: ReactNode
+}
+
 
 export interface PokemonEspecie {
     base_happiness:         number;

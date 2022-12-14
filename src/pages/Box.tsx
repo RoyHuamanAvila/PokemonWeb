@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../app/store';
-import { FC } from 'react'
-import { Pokemon } from '../interfaces';
-import { deleteToBox } from '../features/box/boxSlice';
+import { FC, useEffect } from 'react'
+import { Pokemon, Slot } from '../interfaces';
+import { useDrag, useDrop } from 'react-dnd/dist/hooks';
+import { changeSlot } from '../features/box/boxSlice';
 
 const Box = () => {
     const box = useSelector((state: RootState) => state.box);
-
 
     return (
         <div className="row">
@@ -18,24 +18,70 @@ const Box = () => {
                 </div>
                 <div className="d-flex gap-3 flex-wrap p-3">
                     {
-                        box.pokemons.map((slot, index) => <Slot key={slot.id} index={index} pokemon={slot} />)
+                        box.slots.map(slot => <SlotBox {...slot}>
+                            {
+                                slot.pokemon && <PokemonInBox {...slot.pokemon} />
+                            }
+                        </SlotBox>)
                     }
                 </div>
             </div>
-            <div className="col-5"></div>
+            <div className="col-5">
+            </div>
         </div>
     )
 }
 
-const Slot: FC<{ pokemon: Pokemon, index: number }> = ({ pokemon, index }) => {
-    const dispatch = useDispatch();
+const SlotBox: FC<Slot> = ({ index, children }) => {
+
+    const [{ canDrop, isOver }, drop] = useDrop(() => ({
+        accept: 'POKEMON',
+        drop: () => ({ slot: index }),
+        collect: (monitor) => ({
+            isOver: monitor.isOver(),
+            canDrop: monitor.canDrop()
+        })
+    }))
+
     return (
-        <div className="position-relative d-flex align-items-center justify-content-center box-slot rounded shadow-sm">
-            <img src={pokemon?.sprites.versions?.['generation-v']['black-white'].animated?.front_default} alt="" />
-            <button className='btn-close position-absolute top-0 end-0 bg-primary' type='button' title='Delete' onClick={() => dispatch(deleteToBox(index))}></button>
+        <div
+            ref={drop}
+            className={`
+                position-relative
+                d-flex
+                align-items-center
+                justify-content-center
+                box-slot rounded
+                shadow-sm
+                ${isOver && 'border border-primary'}`}
+            data-testid='dustbin'>
+            {
+                children
+            }
         </div>
     )
 }
 
+const PokemonInBox: FC<Pokemon> = (pokemon) => {
+    const dispatch = useDispatch()
+
+    const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
+        type: 'POKEMON',
+        item: { name: `Pokemon in Slot ${pokemon?.box?.slot}` },
+        end: (item, monitor) => {
+            const dropResult = monitor.getDropResult<{ slot: number }>()
+            if (pokemon?.box?.slot === undefined || dropResult?.slot === undefined) return
+            dispatch(changeSlot({ current: pokemon?.box?.slot, destiny: dropResult?.slot, pokemon }))
+        },
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging(),
+            handlerId: monitor.getHandlerId(),
+        })
+    }))
+
+    return (
+        <img ref={drag} className={isDragging ? 'isDragging' : ''} src={pokemon.sprites.versions?.['generation-v']['black-white'].animated?.front_default} alt="" />
+    )
+}
 
 export default Box
