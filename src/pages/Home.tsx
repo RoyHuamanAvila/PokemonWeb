@@ -17,9 +17,9 @@ const Home = () => {
     return (
         <div className="row">
             <div className="col-9">
-                <div className="pe-3">
+                <div className="d-flex flex-column gap-3">
                     <Searchbar handleSearchPokemon={handleSearchPokemon} />
-                    <div className="d-flex flex-wrap gap-3 pokedex-list pb-5">
+                    <div className="d-flex flex-wrap pokedex-list pt-5 py-3">
                         {
                             pokesInPokedex && pokesInPokedex
                                 .filter(poke => poke.forms[0].name.includes(searchPokemon))
@@ -28,7 +28,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 d-flex flex-column justify-content-center">
                 {
                     pokeSelected && <CardInfoPokemon {...pokeSelected} />
                 }

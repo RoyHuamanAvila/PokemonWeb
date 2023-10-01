@@ -1,0 +1,33 @@
+@use 'src/scss/custom';
+
+nav {
+  height: 72px;
+}
+
+.item-nav {
+  color: custom.$secondary;
+  fill: custom.$secondary;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+}
+
+.item-nav.active {
+  color: custom.$primary;
+  fill: custom.$primary;
+}
+
+.item-nav.active::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: custom.$primary;
+}
+
+.item-nav:hover {
+  color: custom.$primary;
+  fill: custom.$primary;
+}

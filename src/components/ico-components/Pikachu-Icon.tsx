@@ -2,7 +2,7 @@ const Pikachu_Icon = () => {
     return (
         <svg
             width="auto"
-            height="30px"
+            height="32px"
             viewBox="0 0 17.854313 15.410595"
             version="1.1"
             id="svg5"
