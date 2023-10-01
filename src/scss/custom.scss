@@ -8,17 +8,19 @@
 }
 
 $primary: #ff5350;
-$secondary: #636363;
+$secondary: #7C7C7C;
 $light: #929ba2;
+$black: #1E1E1E;
 
 $theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
+    "black": $black,
     "light": $light,
     "grass" : #a8f085,
     "poison": #ae4dff,
     "fire": #ee6f3f,
-    "flying": #f6f8fc,
+    "flying": #72a0a2,
     "water": #0d6efd,
     "bug": #ccbc50,
     "normal": #b7b8c8,
@@ -34,6 +36,8 @@ $theme-colors: (
     "dragon": #00ffc7
 );
 
+
+
 .App {
     background-color: #e4edff;
     box-sizing: border-box;
@@ -44,39 +48,6 @@ $theme-colors: (
         position: relative;
         z-index: 2;
     }
-}
-
-
-nav {
-    height: 60px;
-}
-
-.item-nav {
-    color: $secondary;
-    fill: $secondary;
-    position: relative;
-    cursor: pointer;
-    height: 100%;
-}
-
-.item-nav.active {
-    color: $primary;
-    fill: $primary;
-}
-
-.item-nav.active::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: $primary;
-}
-
-.item-nav:hover {
-    color: $primary;
-    fill: $primary;
 }
 
 input[type="text"]::placeholder {
@@ -94,19 +65,19 @@ input[type="text"]:focus {
 }
 
 .btn-search {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 36px;
 }
 
 .poke-card {
-    width: 250px;
+    width: 300px;
+    min-height: 180px;
     padding: 10px 0px;
-    margin-top: 80px;
     background-color: white;
 
     img {
         position: absolute;
-        bottom: 150px
+        bottom: 160px;
     }
 }
 
@@ -119,10 +90,10 @@ input[type="text"]:focus {
 }
 
 .cardinfopokemon {
-    margin-top: 100px;
     position: relative;
     padding: 50px 10px;
     padding-bottom: 10px;
+    max-width: 350px;
 
     img {
         width: 200px;
@@ -192,6 +163,7 @@ input[type="text"]:focus {
 
 .pokedex-list {
     max-height: calc(100vh - 170px);
+    gap: 64px 1rem;
     overflow: scroll;
     align-items: baseline;
 }

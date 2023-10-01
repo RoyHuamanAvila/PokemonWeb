@@ -1,8 +1,8 @@
 const Pokeball_Icon = () => {
     return (
         <svg
-            width="20.258183px"
-            height="20.943672px"
+            width="30.31"
+            height="32"
             viewBox="0 0 12.258184 12.943671"
             version="1.1"
             id="svg5"

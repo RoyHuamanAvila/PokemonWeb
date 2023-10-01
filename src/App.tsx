@@ -1,4 +1,4 @@
-import Header from "./components/Header"
+import Header from "./components/Header/Header"
 import { Outlet } from 'react-router-dom';
 import { useEffect } from "react";
 import { PokedexData } from "./interfaces";
@@ -6,6 +6,7 @@ import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { enterData, enterPokemons } from "./features/pokedex/pokedexSlice";
 import { createBox } from "./features/box/boxSlice";
+import { Toaster } from 'sonner'
 
 function App() {
   const dispatch = useDispatch();
@@ -24,8 +25,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <div className="container pt-3">
+    <div className="App py-3">
+      <Toaster position="bottom-left" />
+      <div className="container">
         <Header />
         <Outlet />
       </div>
